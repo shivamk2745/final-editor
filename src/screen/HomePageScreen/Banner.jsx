@@ -8,7 +8,7 @@ function Banner() {
       <div className="hero bg-gradient-to-b from-[#1d1d1d] via-[#1d1d1d] to-[#041c31] min-h-screen flex flex-col md:flex-row">
         <div className="hero-content w-full md:w-1/2 order-1">
           <div className="max-w-2xl mx-auto p-10">
-            <h1 className="text-6xl font-bold text-left text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-violet-500">A tool to help in your Adventures</h1>
+            <h1 className="text-6xl font-bold text-left text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-violet-500">A tool to help in your code journey</h1>
             <p className="py-8 text-white text-3xl">
               Elevate your coding skills with our interactive platform. Practice problems, track your progress, and prepare for technical interviews with ease.
             </p>
