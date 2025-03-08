@@ -1,0 +1,1017 @@
+[
+  {
+    "id": 1,
+    "fileName": "2sum",
+    "topic": "Array",
+    "difficulty": "Easy",
+    "company": ["Microsoft", "Google", "Flipkart"],
+    "descriptions": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "nums = [2,7,11,15], target = 9",
+        "output": "[0,1]",
+        "explanation": "Because nums[0] + nums[1] == 9, we return [0, 1]."
+      },
+      {
+        "input": "nums = [3,2,4], target = 6",
+        "output": "[1,2]",
+        "explanation": "Because nums[1] + nums[2] == 6, we return [1, 2]."
+      },
+      {
+        "input": "nums = [3,3], target = 6",
+        "output": "[0,1]",
+        "explanation": "Because nums[0] + nums[1] == 6, we return [0, 1]."
+      }
+    ],
+    "time": "O(n)",
+    "space": "O(n)",
+    "constraint": "2 <= nums.length <= 10^4"
+  },
+  {
+    "id": 2,
+    "fileName": "validanagram",
+    "topic": "Array",
+    "difficulty": "Easy",
+    "company": ["Facebook", "Amazon"],
+    "descriptions": "Given two strings s and t, return true if t is an anagram of s and false otherwise.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "s = 'anagram', t = 'nagaram'",
+        "output": "true",
+        "explanation": "Both strings are anagrams."
+      },
+      {
+        "input": "s = 'rat', t = 'car'",
+        "output": "false",
+        "explanation": "The strings are not anagrams."
+      },
+      {
+        "input": "s = 'a', t = 'ab'",
+        "output": "false",
+        "explanation": "The strings are not anagrams."
+      }
+    ],
+    "time": "O(n)",
+    "space": "O(1)",
+    "constraint": "1 <= s.length, t.length <= 5 * 10^4"
+  },
+  {
+    "id": 3,
+    "fileName": "contains duplicate",
+    "topic": "Array",
+    "difficulty": "Easy",
+    "company": ["Google", "Microsoft"],
+    "descriptions": "Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "nums = [1,2,3,1]",
+        "output": "true",
+        "explanation": "The number 1 appears twice."
+      },
+      {
+        "input": "nums = [1,2,3,4]",
+        "output": "false",
+        "explanation": "All numbers are distinct."
+      },
+      {
+        "input": "nums = [1,1,1,3,3,4,3,2,4,2]",
+        "output": "true",
+        "explanation": "The number 1 appears thrice."
+      }
+    ],
+    "time": "O(n)",
+    "space": "O(n)",
+    "constraint": "1 <= nums.length <= 10^5"
+  },
+  {
+    "id": 4,
+    "fileName": "maximum subarray",
+    "topic": "Array",
+    "difficulty": "Easy",
+    "company": ["Apple", "Amazon"],
+    "descriptions": "Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "nums = [-2,1,-3,4,-1,2,1,-5,4]",
+        "output": "6",
+        "explanation": "The subarray [4,-1,2,1] has the largest sum = 6."
+      },
+      {
+        "input": "nums = [1]",
+        "output": "1",
+        "explanation": "The largest sum is from the only element."
+      },
+      {
+        "input": "nums = [5,4,-1,7,8]",
+        "output": "23",
+        "explanation": "The entire array has the largest sum."
+      }
+    ],
+    "time": "O(n)",
+    "space": "O(1)",
+    "constraint": "1 <= nums.length <= 10^5"
+  },
+  {
+    "id": 5,
+    "fileName": "product of array except self",
+    "topic": "Array",
+    "difficulty": "Medium",
+    "company": ["Google", "Microsoft"],
+    "descriptions": "Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "nums = [1,2,3,4]",
+        "output": "[24,12,8,6]",
+        "explanation": "The product except self for each index."
+      },
+      {
+        "input": "nums = [-1,1,0,-3,3]",
+        "output": "[0,0,9,0,0]",
+        "explanation": "The product except self for each index."
+      },
+      {
+        "input": "nums = [1]",
+        "output": "[0]",
+        "explanation": "Only one element."
+      }
+    ],
+    "time": "O(n)",
+    "space": "O(1)",
+    "constraint": "2 <= nums.length <= 10^5"
+  },
+  {
+    "id": 6,
+    "fileName": "maximum product subarray",
+    "topic": "Array",
+    "difficulty": "Medium",
+    "company": ["Amazon", "Netflix"],
+    "descriptions": "Given an integer array nums, find a contiguous non-empty subarray within the array that has the largest product, and return the largest product.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "nums = [2,3,-2,4]",
+        "output": "6",
+        "explanation": "The subarray [2,3] has the largest product."
+      },
+      {
+        "input": "nums = [-2,0,-1]",
+        "output": "0",
+        "explanation": "The maximum product is 0."
+      },
+      {
+        "input": "nums = [-2,-3,0,-2,-40]",
+        "output": "96",
+        "explanation": "The subarray [-2,-40] has the largest product."
+      }
+    ],
+    "time": "O(n)",
+    "space": "O(1)",
+    "constraint": "1 <= nums.length <= 2 * 10^4"
+  },
+  {
+    "id": 7,
+    "fileName": "kth largest element",
+    "topic": "Array",
+    "difficulty": "Medium",
+    "company": ["Facebook", "Microsoft"],
+    "descriptions": "Given an integer array nums and an integer k, return the k-th largest element in the array.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "nums = [3,2,1,5,6,4], k = 2",
+        "output": "5",
+        "explanation": "The 2nd largest element is 5."
+      },
+      {
+        "input": "nums = [3,2,3], k = 1",
+        "output": "3",
+        "explanation": "The largest element is 3."
+      },
+      {
+        "input": "nums = [1], k = 1",
+        "output": "1",
+        "explanation": "The only element is 1."
+      }
+    ],
+    "time": "O(n)",
+    "space": "O(1)",
+    "constraint": "1 <= k <= nums.length <= 10^4"
+  },
+  {
+    "id": 8,
+    "fileName": "remove duplicates from sorted array",
+    "topic": "Array",
+    "difficulty": "Easy",
+    "company": ["Apple", "Google"],
+    "descriptions": "Given a sorted array nums, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "nums = [1,1,2]",
+        "output": "2",
+        "explanation": "The modified array is [1,2] and the length is 2."
+      },
+      {
+        "input": "nums = [0,0,1,1,1,2,2,3,3,4]",
+        "output": "5",
+        "explanation": "The modified array is [0,1,2,3,4] and the length is 5."
+      },
+      {
+        "input": "nums = []",
+        "output": "0",
+        "explanation": "The array is empty."
+      }
+    ],
+    "time": "O(n)",
+    "space": "O(1)",
+    "constraint": "0 <= nums.length <= 3 * 10^4"
+  },
+  {
+    "id": 9,
+    "fileName": "rotatearray",
+    "topic": "Array",
+    "difficulty": "Medium",
+    "company": ["Microsoft", "Google"],
+    "descriptions": "Given an array, rotate the array to the right by k steps, where k is non-negative.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "nums = [1,2,3,4,5,6,7], k = 3",
+        "output": "[5,6,7,1,2,3,4]",
+        "explanation": "The array is rotated to the right by 3 steps."
+      },
+      {
+        "input": "nums = [-1,-100,3,99], k = 2",
+        "output": "[3,99,-1,-100]",
+        "explanation": "The array is rotated to the right by 2 steps."
+      },
+      {
+        "input": "nums = [1,2], k = 1",
+        "output": "[2,1]",
+        "explanation": "The array is rotated to the right by 1 step."
+      }
+    ],
+    "time": "O(n)",
+    "space": "O(1)",
+    "constraint": "1 <= nums.length <= 10^5"
+  },
+  {
+    "id": 10,
+    "fileName": "merge sorted array",
+    "topic": "Array",
+    "difficulty": "Easy",
+    "company": ["Apple", "Microsoft"],
+    "descriptions": "You are given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3",
+        "output": "[1,2,2,3,5,6]",
+        "explanation": "Merged array is [1,2,2,3,5,6]."
+      },
+      {
+        "input": "nums1 = [1], m = 1, nums2 = [], n = 0",
+        "output": "[1]",
+        "explanation": "The merged array is [1]."
+      },
+      {
+        "input": "nums1 = [0], m = 0, nums2 = [1], n = 1",
+        "output": "[1]",
+        "explanation": "The merged array is [1]."
+      }
+    ],
+    "time": "O(n)",
+    "space": "O(1)",
+    "constraint": "1 <= m + n <= 200"
+  },
+  {
+    "id": 11,
+    "fileName": "3sum",
+    "topic": "Array",
+    "difficulty": "Medium",
+    "company": ["Facebook", "Amazon"],
+    "descriptions": "Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "nums = [-1,0,1,2,-1,-4]",
+        "output": "[[-1,-1,2],[-1,0,1]]",
+        "explanation": "The triplets that sum to zero are [-1,-1,2] and [-1,0,1]."
+      },
+      {
+        "input": "nums = []",
+        "output": "[]",
+        "explanation": "No triplets can be formed."
+      },
+      {
+        "input": "nums = [0]",
+        "output": "[]",
+        "explanation": "Not enough elements to form triplets."
+      }
+    ],
+    "time": "O(n^2)",
+    "space": "O(1)",
+    "constraint": "0 <= nums.length <= 3000"
+  },
+  {
+    "id": 12,
+    "fileName": "find peak element",
+    "topic": "Array",
+    "difficulty": "Medium",
+    "company": ["Google", "Apple"],
+    "descriptions": "A peak element in an array is an element which is greater than or equal to its neighbors. Given an integer array nums, find a peak element and return its index.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "nums = [1,2,3,1]",
+        "output": "2",
+        "explanation": "3 is a peak element at index 2."
+      },
+      {
+        "input": "nums = [1,2,1,3,5,6,4]",
+        "output": "5",
+        "explanation": "5 is a peak element at index 5."
+      },
+      {
+        "input": "nums = [1]",
+        "output": "0",
+        "explanation": "The only element is a peak."
+      }
+    ],
+    "time": "O(log n)",
+    "space": "O(1)",
+    "constraint": "1 <= nums.length <= 10000"
+  },
+  {
+    "id": 13,
+    "fileName": "twosum",
+    "topic": "Array",
+    "difficulty": "Easy",
+    "company": ["Microsoft", "Google"],
+    "descriptions": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "nums = [2,7,11,15], target = 9",
+        "output": "[0,1]",
+        "explanation": "Because nums[0] + nums[1] == 9, we return [0, 1]."
+      },
+      {
+        "input": "nums = [3,2,4], target = 6",
+        "output": "[1,2]",
+        "explanation": "Because nums[1] + nums[2] == 6, we return [1, 2]."
+      },
+      {
+        "input": "nums = [3,3], target = 6",
+        "output": "[0,1]",
+        "explanation": "Because nums[0] + nums[1] == 6, we return [0, 1]."
+      }
+    ],
+    "time": "O(n)",
+    "space": "O(n)",
+    "constraint": "2 <= nums.length <= 10^4"
+  },
+  {
+    "id": 14,
+    "fileName": "max consecutive ones",
+    "topic": "Array",
+    "difficulty": "Easy",
+    "company": ["Facebook", "Microsoft"],
+    "descriptions": "Given a binary array nums, return the maximum number of consecutive 1's in the array.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "nums = [1,1,0,1,1,1]",
+        "output": "3",
+        "explanation": "The maximum consecutive 1's are three."
+      },
+      {
+        "input": "nums = [1,0,1,1,0,1]",
+        "output": "2",
+        "explanation": "The maximum consecutive 1's are two."
+      },
+      {
+        "input": "nums = [0,0,0]",
+        "output": "0",
+        "explanation": "No 1's in the array."
+      }
+    ],
+    "time": "O(n)",
+    "space": "O(1)",
+    "constraint": "1 <= nums.length <= 10^5"
+  },
+  {
+    "id": 15,
+    "fileName": "max product subarray",
+    "topic": "Array",
+    "difficulty": "Medium",
+    "company": ["Amazon", "Google"],
+    "descriptions": "Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest product and return that product.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "nums = [2,3,-2,4]",
+        "output": "6",
+        "explanation": "The subarray [2,3] has the largest product of 6."
+      },
+      {
+        "input": "nums = [-2,0,-1]",
+        "output": "0",
+        "explanation": "The maximum product is 0."
+      },
+      {
+        "input": "nums = [-2,-3,0,-2,-40]",
+        "output": "96",
+        "explanation": "The subarray [-2,-40] has the largest product of 96."
+      }
+    ],
+    "time": "O(n)",
+    "space": "O(1)",
+    "constraint": "1 <= nums.length <= 2 * 10^4"
+  },
+  {
+    "id": 16,
+    "fileName": "valid anagram",
+    "topic": "String",
+    "difficulty": "Easy",
+    "company": ["Facebook", "Google"],
+    "descriptions": "Given two strings s and t, return true if t is an anagram of s, and false otherwise.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "s = \"anagram\", t = \"nagaram\"",
+        "output": "true",
+        "explanation": "Both strings have the same characters."
+      },
+      {
+        "input": "s = \"rat\", t = \"car\"",
+        "output": "false",
+        "explanation": "The characters in s and t do not match."
+      },
+      {
+        "input": "s = \"\", t = \"\"",
+        "output": "true",
+        "explanation": "Both strings are empty."
+      }
+    ],
+    "time": "O(n)",
+    "space": "O(1)",
+    "constraint": "0 <= s.length, t.length <= 5 * 10^4"
+  },
+  {
+    "id": 17,
+    "fileName": "longest substring",
+    "topic": "String",
+    "difficulty": "Medium",
+    "company": ["Apple", "Amazon"],
+    "descriptions": "Given a string s, find the length of the longest substring without repeating characters.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "s = \"abcabcbb\"",
+        "output": "3",
+        "explanation": "The longest substring is \"abc\"."
+      },
+      {
+        "input": "s = \"bbbbb\"",
+        "output": "1",
+        "explanation": "The longest substring is \"b\"."
+      },
+      {
+        "input": "s = \"pwwkew\"",
+        "output": "3",
+        "explanation": "The longest substring is \"wke\"."
+      }
+    ],
+    "time": "O(n)",
+    "space": "O(min(n,m))",
+    "constraint": "0 <= s.length <= 10^5"
+  },
+  {
+    "id": 18,
+    "fileName": "reverse String",
+    "topic": "String",
+    "difficulty": "Easy",
+    "company": ["Microsoft", "Facebook"],
+    "descriptions": "Write a function that reverses a string. The input string is given as an array of characters s.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "s = [\"h\",\"e\",\"l\",\"l\",\"o\"]",
+        "output": "[\"o\",\"l\",\"l\",\"e\",\"h\"]",
+        "explanation": "The string reversed is \"olleh\"."
+      },
+      {
+        "input": "s = [\"H\",\"a\",\"n\",\"n\",\"a\",\"h\"]",
+        "output": "[\"h\",\"a\",\"n\",\"n\",\"a\",\"H\"]",
+        "explanation": "The string reversed is \"hannah\"."
+      },
+      {
+        "input": "s = [\"A\",\"B\",\"C\"]",
+        "output": "[\"C\",\"B\",\"A\"]",
+        "explanation": "The string reversed is \"CBA\"."
+      }
+    ],
+    "time": "O(n)",
+    "space": "O(1)",
+    "constraint": "1 <= s.length <= 10^5"
+  },
+  {
+    "id": 19,
+    "fileName": "palindrome",
+    "topic": "String",
+    "difficulty": "Easy",
+    "company": ["Amazon", "Microsoft"],
+    "descriptions": "Given a string s, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "s = \"A man, a plan, a canal: Panama\"",
+        "output": "true",
+        "explanation": "Ignoring non-alphanumeric characters, it's a palindrome."
+      },
+      {
+        "input": "s = \"race a car\"",
+        "output": "false",
+        "explanation": "It's not a palindrome."
+      },
+      {
+        "input": "s = \"\"",
+        "output": "true",
+        "explanation": "An empty string is considered a palindrome."
+      }
+    ],
+    "time": "O(n)",
+    "space": "O(1)",
+    "constraint": "0 <= s.length <= 2 * 10^5"
+  },
+  {
+    "id": 20,
+    "fileName": "group Anagrams",
+    "topic": "String",
+    "difficulty": "Medium",
+    "company": ["Google", "Facebook"],
+    "descriptions": "Given an array of strings strs, group the anagrams together. You can return the answer in any order.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "strs = [\"eat\",\"tea\",\"tan\",\"ate\",\"nat\",\"bat\"]",
+        "output": "[[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]",
+        "explanation": "Anagrams grouped together."
+      },
+      {
+        "input": "strs = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "Single empty string."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "Single character string."
+      }
+    ],
+    "time": "O(n * k log k)",
+    "space": "O(n * k)",
+    "constraint": "1 <= strs.length <= 10^4, 0 <= strs[i].length <= 100"
+  },
+  {
+    "id": 21,
+    "fileName": "length of lastword",
+    "topic": "String",
+    "difficulty": "Easy",
+    "company": ["Google", "Amazon"],
+    "descriptions": "Given a string s consists of some words separated by spaces, return the length of the last word in the string.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "s = \"Hello World\"",
+        "output": "5",
+        "explanation": "The last word is \"World\"."
+      },
+      {
+        "input": "s = \"   fly me   to   the moon  \"",
+        "output": "4",
+        "explanation": "The last word is \"moon\"."
+      },
+      {
+        "input": "s = \"luffy is still joyboy\"",
+        "output": "6",
+        "explanation": "The last word is \"joyboy\"."
+      }
+    ],
+    "time": "O(n)",
+    "space": "O(1)",
+    "constraint": "0 <= s.length <= 10^4"
+  },
+  {
+    "id": 22,
+    "fileName": "replace all substring",
+    "topic": "String",
+    "difficulty": "Medium",
+    "company": ["Facebook", "Amazon"],
+    "descriptions": "Given a string s and an array of strings, replace all occurrences of the substrings in the array with an empty string.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "s = \"abcd\", toRemove = [\"a\",\"b\"]",
+        "output": "\"cd\"",
+        "explanation": "After removing 'a' and 'b', the result is 'cd'."
+      },
+      {
+        "input": "s = \"the sky is blue\", toRemove = [\"the\", \"is\"]",
+        "output": "\" sky blue\"",
+        "explanation": "After removing 'the' and 'is', the result is ' sky blue'."
+      },
+      {
+        "input": "s = \"\", toRemove = [\"a\"]",
+        "output": "\"\"",
+        "explanation": "Empty string remains empty."
+      }
+    ],
+    "time": "O(n * m)",
+    "space": "O(n)",
+    "constraint": "0 <= s.length <= 10^5, 1 <= toRemove.length <= 100"
+  },
+  {
+    "id": 23,
+    "fileName": "count and say",
+    "topic": "String",
+    "difficulty": "Medium",
+    "company": ["Microsoft", "Amazon"],
+    "descriptions": "The count-and-say sequence is a sequence of digit strings defined by the recursive formula: countAndSay(1) = \"1\". To generate the nth term of the sequence, follow these steps: read off the digits of the previous term, counting the number of digits in groups of the same digit.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "n = 1",
+        "output": "\"1\"",
+        "explanation": "The first term is \"1\"."
+      },
+      {
+        "input": "n = 4",
+        "output": "\"1211\"",
+        "explanation": "The fourth term is \"1211\"."
+      },
+      {
+        "input": "n = 5",
+        "output": "\"111221\"",
+        "explanation": "The fifth term is \"111221\"."
+      }
+    ],
+    "time": "O(2^n)",
+    "space": "O(1)",
+    "constraint": "1 <= n <= 30"
+  },
+  {
+    "id": 24,
+    "fileName": "string to integer",
+    "topic": "String",
+    "difficulty": "Medium",
+    "company": ["Amazon", "Apple"],
+    "descriptions": "Implement the myAtoi(string s) function, which converts a string to a 32-bit signed integer (similar to C/C++'s atoi function).",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "s = \"42\"",
+        "output": "42",
+        "explanation": "The string is converted to integer 42."
+      },
+      {
+        "input": "s = \"   -42\"",
+        "output": "-42",
+        "explanation": "Leading spaces are ignored and the integer is -42."
+      },
+      {
+        "input": "s = \"4193 with words\"",
+        "output": "4193",
+        "explanation": "The integer part is 4193."
+      }
+    ],
+    "time": "O(n)",
+    "space": "O(1)",
+    "constraint": "0 <= s.length <= 200"
+  },
+  {
+    "id": 25,
+    "fileName": "longest palindromic substring",
+    "topic": "String",
+    "difficulty": "Medium",
+    "company": ["Google", "Facebook"],
+    "descriptions": "Given a string s, return the longest palindromic substring in s.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "s = \"babad\"",
+        "output": "\"bab\" or \"aba\"",
+        "explanation": "Both \"bab\" and \"aba\" are valid answers."
+      },
+      {
+        "input": "s = \"cbbd\"",
+        "output": "\"bb\"",
+        "explanation": "The longest palindromic substring is \"bb\"."
+      },
+      {
+        "input": "s = \"a\"",
+        "output": "\"a\"",
+        "explanation": "The longest palindromic substring is \"a\"."
+      }
+    ],
+    "time": "O(n^2)",
+    "space": "O(1)",
+    "constraint": "1 <= s.length <= 1000"
+  },
+  {
+    "id": 26,
+    "fileName": "climbing stairs",
+    "topic": "Dynamic Programming",
+    "difficulty": "Easy",
+    "company": ["Amazon", "Microsoft"],
+    "descriptions": "You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "n = 2",
+        "output": "2",
+        "explanation": "There are two ways to climb to the top: 1 step + 1 step or 2 steps."
+      },
+      {
+        "input": "n = 3",
+        "output": "3",
+        "explanation": "There are three ways to climb to the top: 1+1+1, 1+2, or 2+1."
+      },
+      {
+        "input": "n = 4",
+        "output": "5",
+        "explanation": "There are five ways to climb to the top."
+      }
+    ],
+    "time": "O(n)",
+    "space": "O(1)",
+    "constraint": "1 <= n <= 45"
+  },
+  {
+    "id": 27,
+    "fileName": "min cost climbing stairs",
+    "topic": "Dynamic Programming",
+    "difficulty": "Easy",
+    "company": ["Google", "Apple"],
+    "descriptions": "You are given an integer array cost where cost[i] is the cost of ith step on a staircase. Once you pay the cost, you can climb either one or two steps. You need to find the minimum cost to reach the top of the floor.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "cost = [10, 15, 20]",
+        "output": "15",
+        "explanation": "The minimum cost to reach the top is 15."
+      },
+      {
+        "input": "cost = [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]",
+        "output": "6",
+        "explanation": "The minimum cost to reach the top is 6."
+      },
+      {
+        "input": "cost = [0, 0, 0, 0, 0]",
+        "output": "0",
+        "explanation": "No cost to climb."
+      }
+    ],
+    "time": "O(n)",
+    "space": "O(1)",
+    "constraint": "2 <= cost.length <= 1000"
+  },
+  {
+    "id": 28,
+    "fileName": "longest increasing subsequence",
+    "topic": "Dynamic Programming",
+    "difficulty": "Medium",
+    "company": ["Microsoft", "Facebook"],
+    "descriptions": "Given an integer array nums, return the length of the longest strictly increasing subsequence.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "nums = [10, 9, 2, 5, 3, 7, 101, 18]",
+        "output": "4",
+        "explanation": "The longest increasing subsequence is [2, 3, 7, 101]."
+      },
+      {
+        "input": "nums = [0, 1, 0, 3, 2, 3]",
+        "output": "4",
+        "explanation": "The longest increasing subsequence is [0, 1, 2, 3]."
+      },
+      {
+        "input": "nums = [7, 7, 7, 7, 7, 7, 7]",
+        "output": "1",
+        "explanation": "All elements are the same."
+      }
+    ],
+    "time": "O(n^2)",
+    "space": "O(n)",
+    "constraint": "1 <= nums.length <= 2500"
+  },
+  {
+    "id": 29,
+    "fileName": "coin change",
+    "topic": "Dynamic Programming",
+    "difficulty": "Medium",
+    "company": ["Apple", "Amazon"],
+    "descriptions": "You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money. Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "coins = [1, 2, 5], amount = 11",
+        "output": "3",
+        "explanation": "11 = 5 + 5 + 1."
+      },
+      {
+        "input": "coins = [2], amount = 3",
+        "output": "-1",
+        "explanation": "Not possible to make change."
+      },
+      {
+        "input": "coins = [1], amount = 0",
+        "output": "0",
+        "explanation": "No coins needed."
+      }
+    ],
+    "time": "O(n * amount)",
+    "space": "O(amount)",
+    "constraint": "1 <= coins.length <= 12, 0 <= amount <= 10^4"
+  },
+  {
+    "id": 30,
+    "fileName": "edit distance",
+    "topic": "Dynamic Programming",
+    "difficulty": "Medium",
+    "company": ["Google", "Facebook"],
+    "descriptions": "Given two strings word1 and word2, return the minimum number of operations required to convert word1 to word2.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "word1 = \"horse\", word2 = \"ros\"",
+        "output": "3",
+        "explanation": "horse -> rorse (replace h with r) -> rose (remove h) -> ros (remove e)."
+      },
+      {
+        "input": "word1 = \"intention\", word2 = \"execution\"",
+        "output": "5",
+        "explanation": "The operations are: intention -> inention (remove t) -> enention (replace i with e) -> exention (replace n with x) -> exection (replace t with c) -> execution."
+      },
+      {
+        "input": "word1 = \"\", word2 = \"a\"",
+        "output": "1",
+        "explanation": "Insert 'a'."
+      }
+    ],
+    "time": "O(m * n)",
+    "space": "O(m * n)",
+    "constraint": "0 <= word1.length, word2.length <= 500"
+  },
+  {
+    "id": 31,
+    "fileName": "partition equal subset",
+    "topic": "Dynamic Programming",
+    "difficulty": "Medium",
+    "company": ["Amazon", "Facebook"],
+    "descriptions": "Given a non-empty array nums containing only positive integers, find if it is possible to partition the array into two subsets such that the sum of the elements in both subsets is equal.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "nums = [1, 5, 11, 5]",
+        "output": "true",
+        "explanation": "The array can be partitioned into [1, 5, 5] and [11]."
+      },
+      {
+        "input": "nums = [1, 2, 3, 5]",
+        "output": "false",
+        "explanation": "Cannot partition into equal subsets."
+      },
+      {
+        "input": "nums = [2, 2, 1, 1]",
+        "output": "true",
+        "explanation": "The array can be partitioned into [2, 1] and [2, 1]."
+      }
+    ],
+    "time": "O(n * sum)",
+    "space": "O(sum)",
+    "constraint": "1 <= nums.length <= 200, 1 <= nums[i] <= 100"
+  },
+  {
+    "id": 32,
+    "fileName": "maximum product subarray",
+    "topic": "Dynamic Programming",
+    "difficulty": "Medium",
+    "company": ["Google", "Apple"],
+    "descriptions": "Given an integer array nums, find the contiguous subarray within an array (containing at least one number) which has the largest product.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "nums = [2, 3, -2, 4]",
+        "output": "6",
+        "explanation": "The subarray [2, 3] has the largest product."
+      },
+      {
+        "input": "nums = [-2, 0, -1]",
+        "output": "0",
+        "explanation": "The maximum product is 0."
+      },
+      {
+        "input": "nums = [-2, 3, -4]",
+        "output": "24",
+        "explanation": "The maximum product is obtained by [-2, 3, -4]."
+      }
+    ],
+    "time": "O(n)",
+    "space": "O(1)",
+    "constraint": "1 <= nums.length <= 2 * 10^4, -10 <= nums[i] <= 10"
+  },
+  {
+    "id": 33,
+    "fileName": "longest palindromic subsequence",
+    "topic": "Dynamic Programming",
+    "difficulty": "Medium",
+    "company": ["Facebook", "Amazon"],
+    "descriptions": "Given a string s, find the length of the longest palindromic subsequence in s.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "s = \"bbbab\"",
+        "output": "4",
+        "explanation": "One possible longest palindromic subsequence is \"bbbb\"."
+      },
+      {
+        "input": "s = \"cbbd\"",
+        "output": "2",
+        "explanation": "The longest palindromic subsequence is \"bb\"."
+      },
+      {
+        "input": "s = \"a\"",
+        "output": "1",
+        "explanation": "The longest palindromic subsequence is \"a\"."
+      }
+    ],
+    "time": "O(n^2)",
+    "space": "O(n^2)",
+    "constraint": "1 <= s.length <= 1000"
+  },
+  {
+    "id": 34,
+    "fileName": "longest common subsequence",
+    "topic": "Dynamic Programming",
+    "difficulty": "Medium",
+    "company": ["Microsoft", "Google"],
+    "descriptions": "Given two strings text1 and text2, return the length of their longest common subsequence.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "text1 = \"abcde\", text2 = \"ace\"",
+        "output": "3",
+        "explanation": "The longest common subsequence is \"ace\"."
+      },
+      {
+        "input": "text1 = \"abc\", text2 = \"abc\"",
+        "output": "3",
+        "explanation": "The longest common subsequence is \"abc\"."
+      },
+      {
+        "input": "text1 = \"abc\", text2 = \"def\"",
+        "output": "0",
+        "explanation": "There is no common subsequence."
+      }
+    ],
+    "time": "O(m * n)",
+    "space": "O(m * n)",
+    "constraint": "1 <= text1.length, text2.length <= 1000"
+  },
+  {
+    "id": 35,
+    "fileName": "house robber",
+    "topic": "Dynamic Programming",
+    "difficulty": "Medium",
+    "company": ["Apple", "Amazon"],
+    "descriptions": "You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed. All houses at this place are arranged in a circle. That means the first house is the neighbor of the last one. Meanwhile, adjacent houses have a security system connected, and it will automatically contact the police if two adjacent houses were broken into on the same night.",
+    "testCases": 3,
+    "examples": [
+      {
+        "input": "nums = [2, 3, 2]",
+        "output": "3",
+        "explanation": "Maximum amount of money can be robbed is 3."
+      },
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "4",
+        "explanation": "Maximum amount of money can be robbed is 4."
+      },
+      {
+        "input": "nums = [0]",
+        "output": "0",
+        "explanation": "No houses to rob."
+      }
+    ],
+    "time": "O(n)",
+    "space": "O(1)",
+    "constraint": "1 <= nums.length <= 100"
+  }
+]

@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Roy Sharma",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero facilis minus libero perspiciatis, cumque molestiae.",
+        "bgColor": "bg-red-500"
+    },
+    {
+        "id": 2,
+        "name": "John Doe",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero facilis minus libero perspiciatis, cumque molestiae.",
+        "bgColor": "bg-blue-500"
+    },
+    {
+        "id": 3,
+        "name": "Jame Doe",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero facilis minus libero perspiciatis, cumque molestiae.",
+        "bgColor": "bg-red-500"
+    },
+    {
+        "id": 4,
+        "name": "Bob Smith",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero facilis minus libero perspiciatis, cumque molestiae.",
+        "bgColor": "bg-blue-500"
+    },
+    {
+        "id": 5,
+        "name": "Alice Johnson",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero facilis minus libero perspiciatis, cumque molestiae.",
+        "bgColor": "bg-red-500"
+    },
+    {
+        "id": 6,
+        "name": "Tom Wilson",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero facilis minus libero perspiciatis, cumque molestiae.",
+        "bgColor": "bg-blue-500"
+    }
+]

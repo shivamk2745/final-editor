@@ -1,0 +1,93 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(237, 237, 237);
+  color: black;
+  overflow: hidden;
+  .question {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding-left: 2rem;
+    .q-title {
+      font-size: 2.5rem;
+      padding-top: 2rem;
+    }
+    .q-level {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.5rem;
+      font-weight: 500;
+      span {
+        background-color: green;
+        opacity: 0.6;
+        padding: 0.3rem;
+        border-radius: 0.75rem;
+      }
+    }
+    .q-question {
+      padding-top: 2rem;
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+    .parent-question {
+      background-color: rgb(197, 193, 193);
+      margin-top: 2rem;
+      margin-right: 2rem;
+      border-radius: 0.5rem;
+      .q-example {
+        border-radius: 1rem;
+        background-color: white;
+        margin: 2rem;
+        padding: 1rem;
+        .q-input-title {
+          font-size: 2rem;
+        }
+        .q-actual-input {
+          p {
+            font-size: 1.5rem;
+            font-weight: 400;
+            strong {
+              font-size: 1.8rem;
+            }
+          }
+        }
+      }
+    }
+    .q-constraints {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+      p {
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+    }
+    .q-complexity {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+      p {
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+    }
+    .q-company {
+      margin-top: 1rem;
+
+      font-size: 1.5rem;
+      .company {
+        padding: 1rem;
+        margin-right: 2rem;
+        background-color: rgb(197, 193, 193);
+        span {
+          background-color: white;
+          margin-top: 1rem;
+          padding: 0.5rem;
+          margin-left: 1rem;
+          border-radius: 0.75rem;
+        }
+      }
+    }
+  }
+}
