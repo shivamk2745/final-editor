@@ -1,2 +1,26 @@
-.env
+# Ignore node_modules
 node_modules/
+
+# Ignore environment files (secrets, database credentials, etc.)
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Ignore logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Ignore build and output files
+dist/
+build/
+
+# Ignore OS & editor-specific files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
