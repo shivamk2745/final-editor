@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "title": "Collaborative Projects",
+        "description": "Engage with others in real-time on shared projects, allowing users to contribute ideas and solutions simultaneously, fostering a dynamic learning environment."
+    },
+    {
+        "id": 2,
+        "title": "Competitive Coding Platform",
+        "description": "Join a thriving community of coders to hone your skills with challenging problems and competitions, providing the best preparation for technical interviews."
+    },
+    {
+        "id": 3,
+        "title": "Job Candidate Testing",
+        "description": "Employers can assess candidates through tailored coding challenges and projects, ensuring that they find the right fit for their technical requirements."
+
+    }
+]
