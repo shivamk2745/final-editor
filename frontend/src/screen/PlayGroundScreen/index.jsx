@@ -8,6 +8,7 @@ import Ai from "./Ai";
 import Question from "./Question";
 import { QuestionProvider } from "./QuestionProvider";
 import questionsData from "./data.json";
+import logo from "../assets/logo.png";
 
 const Playground = () => {
   const [input, setInput] = useState("");
@@ -72,7 +73,7 @@ const Playground = () => {
       <div className="outer-container">
         <div className="playground-container">
           <div className="container-header">
-            <img src="/logo.png" alt="logo" />
+            <img src={ logo} alt="logo" />
             {isPracticeQuestion && questionData ? (
               <div className="flex items-center">
                 <b className="mr-2">Problem: {questionData.fileName}</b>

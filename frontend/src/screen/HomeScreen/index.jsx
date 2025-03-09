@@ -3,6 +3,7 @@ import "./index.scss";
 import RightScreen from "./rightScreen";
 import { ModalContext } from "../../Provider/ProviderModal";
 import Modals from "../../Provider/Modal/Modals";
+import logo from "../assets/logo.png";
 const EditorHome = () => {
   const modalFeature = useContext(ModalContext);
   const modalOpen = () => {
@@ -12,7 +13,7 @@ const EditorHome = () => {
     <div className="home-container">
       <div className="left-container">
         <div className="logo-container">
-          <img src="logo.png" alt="" />
+          <img src={ logo} alt="logo" />
           <h1>codeOnline</h1>
           <h2>Code. Compile. Learn</h2>
           <button onClick={modalOpen}>
