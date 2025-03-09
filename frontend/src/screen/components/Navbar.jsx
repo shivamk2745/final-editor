@@ -1,8 +1,8 @@
 import React from "react";
-import Login from "./Login";
+import Login from "../components/Login";
 import { useAuth } from "../../Provider/AuthProvider";
 import { Link } from "react-router-dom";
-import Logout from "./Logout";
+import Logout from "../components/Logout";
 
 function Navbar() {
   const [authUser, setAuthUser] = useAuth();
@@ -73,7 +73,7 @@ function Navbar() {
             <Logout></Logout>
           ) : (
             <a
-              className="btn mx-2 bg-transparent bg-clip-border bg-gradient-to-r from-cyan-300 to-violet-500 hover:text-white"
+              className="btn mx-2 bg-transparent border-black bg-clip-border bg-gradient-to-r from-cyan-300 to-violet-500 hover:text-white transition-all duration-300"
               onClick={() => document.getElementById("my_modal_3").showModal()}
             >
               Login

@@ -44,46 +44,46 @@ function LogIn() {
     
   return (
     <dialog id="my_modal_3" className="modal">
-      <div className="modal-box">
+      <div className="modal-box h-fit w-1/2 p-4">
         <button
-          className="btn btn-sm absolute right-2 top-2 bg-transparent bg-clip-border bg-gradient-to-r from-cyan-300 to-violet-500 z-10"
+          className="btn btn-md absolute right-2 top-2 bg-transparent bg-clip-border bg-gradient-to-r from-cyan-300 to-violet-500 z-10 hover:text-white transition-colors duration-300"
           type="button" 
           onClick={() => document.getElementById('my_modal_3').close()}
         >
           ✕
         </button>
-        <h3 className="font-bold text-lg">Login</h3>
+        <h1 className="font-bold text-2xl mt-3">Login</h1>
         <div className="card min-w-screen w-full bg-base-100">
           <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Email</span>
+                <span className="label-text text-xl">Email</span>
               </label>
               <input
                 type="email"
                 placeholder="email"
-                className="input input-bordered"
+                className="input input-bordered text-xl p-3"
                 {...register("email", { required: true })}
               />
               {errors.email && <span className="text-red-500">This field is required</span>}
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Password</span>
+                <span className="label-text text-xl">Password</span>
               </label>
               <input
                 type="password"
                 placeholder="password"
-                className="input input-bordered"
+                className="input input-bordered text-xl p-3"
                 {...register("password", { required: true })}
               />
               {errors.password && <span className="text-red-500">This field is required</span>}
             </div>
             <div className="card-actions flex justify-between mt-3">
-              <button className="btn bg-transparent bg-clip-border bg-gradient-to-r from-cyan-300 to-violet-500 hover:text-white">
+              <button className="btn text-xl mt-6 bg-transparent bg-clip-border bg-gradient-to-r from-cyan-300 to-violet-500 hover:text-white">
                 Login
               </button>
-              <span className="mt-4">
+              <span className="mt-11 text-xl">
                 Not registered?
                 <Link to="/signup">
                   <span className="cursor-pointer text-violet-600"> SignUp!</span>

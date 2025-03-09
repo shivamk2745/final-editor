@@ -4,10 +4,10 @@ import EditorHome from "./screen/HomeScreen";
 import PlaygroundProvider from "./Provider/PlaygroundProvider";
 import ProviderModal from "./Provider/ProviderModal";
 import HomePage from "./screen/HomePageScreen/HomePage";
-import Signup from "./screen/HomePageScreen/SignUp";
+import Signup from "./screen/components/SignUp";
 import { Toaster } from "react-hot-toast";
 import { useAuth } from "./Provider/AuthProvider";
-import CreateProfile from "./screen/HomePageScreen/CreateProfile";
+import CreateProfile from "./screen/components/CreateProfile";
 import Profile from "./screen/HomePageScreen/Profile";
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/signup" element={<Signup></Signup>} />
-            <Route path="/editorpage" element={<EditorHome />} />
+            <Route path="/editorpage" element={authUser?<EditorHome />:<HomePage/>} />
             <Route
               path="/profile"
               element={authUser ? <CreateProfile /> : <Signup />}

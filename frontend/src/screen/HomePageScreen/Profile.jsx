@@ -1,6 +1,6 @@
 import React from 'react'
-import ShowProfile from './ShowProfile'
-import Navbar from './Navbar'
+import ShowProfile from '../components/ShowProfile'
+import Navbar from '../components/Navbar'
 
 function Profile() {
   return (

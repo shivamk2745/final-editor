@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar";
-import Banner from "./Banner";
-import Testimonials from "./Testimonials";
-import Footer from "./Footer";
-import Features from "./Features";
+import Navbar from "../components/Navbar";
+import Banner from "../components/Banner";
+import Testimonials from "../components/Testimonials";
+import Footer from "../components/Footer";
+import Features from "../components/Features";
 
 const HomePage = () => {
   const [authUser, setAuthUser] = useState(true);
- return (
+  return (
     <>
       <Navbar></Navbar>
       <Banner></Banner>
@@ -15,6 +15,6 @@ const HomePage = () => {
       <Testimonials></Testimonials>
       <Footer></Footer>
     </>
-  )
+  );
 };
 export default HomePage;
