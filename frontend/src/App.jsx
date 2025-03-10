@@ -9,7 +9,8 @@ import { Toaster } from "react-hot-toast";
 import { useAuth } from "./Provider/AuthProvider";
 import CreateProfile from "./screen/components/CreateProfile";
 import Profile from "./screen/HomePageScreen/Profile";
-
+import InterviewLandingPage from "./screen/Interview/InterviewLandingPage";
+import InterviewPage from "./screen/Interview/InterviewPage";
 function App() {
   const [authUser, setAuthUser] = useAuth();
 
@@ -20,7 +21,8 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/signup" element={<Signup></Signup>} />
-            <Route path="/editorpage" element={authUser?<EditorHome />:<HomePage/>} />
+            <Route path="/editorpage" element={authUser ? <EditorHome /> : <HomePage />} />
+            <Route path="/interview" element={authUser ? <InterviewLandingPage/> : <HomePage/>} />
             <Route
               path="/profile"
               element={authUser ? <CreateProfile /> : <Signup />}
@@ -33,6 +35,7 @@ function App() {
               path="/editorpage/playground/:fileId/:folderId/:fileName"
               element={<Playground />}
             />
+            <Route path="/interview/:interviewId" element={ authUser ? <InterviewPage/> : <HomePage/>} />
           </Routes>
           <Toaster />
         </BrowserRouter>

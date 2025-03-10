@@ -1,0 +1,100 @@
+.interview-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  
+  .interview-header {
+    z-index: 10;
+  }
+  
+  .interview-content {
+    flex: 1;
+    overflow: hidden;
+    
+    .left-panel {
+      .problems-list, .problem-details {
+        &::-webkit-scrollbar {
+          width: 6px;
+        }
+        
+        &::-webkit-scrollbar-track {
+          background: #f1f1f1;
+          border-radius: 10px;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+          background: #d1d5db;
+          border-radius: 10px;
+        }
+        
+        &::-webkit-scrollbar-thumb:hover {
+          background: #9ca3af;
+        }
+      }
+      
+      .chat-messages {
+        &::-webkit-scrollbar {
+          width: 6px;
+        }
+        
+        &::-webkit-scrollbar-track {
+          background: #f1f1f1;
+          border-radius: 10px;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+          background: #d1d5db;
+          border-radius: 10px;
+        }
+        
+        &::-webkit-scrollbar-thumb:hover {
+          background: #9ca3af;
+        }
+        
+        .chat-message {
+          margin-bottom: 8px;
+          
+          .message-content {
+            display: inline-block;
+            max-width: 80%;
+            word-break: break-word;
+          }
+        }
+      }
+    }
+    
+    .right-panel {
+      .editor-body {
+        position: relative;
+        
+        .monaco-editor {
+          padding-top: 8px;
+        }
+      }
+      
+      .io-container {
+        min-height: 150px;
+        
+        textarea, .output-display {
+          font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+// Animation keyframes
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+// Ensure the editor expands to fill available space
+:global(.monaco-editor) {
+  width: 100% !important;
+}
