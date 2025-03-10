@@ -12,7 +12,7 @@ function FeatureCard({ item }) {
         className={`card bg-[#102b43] text-primary-content m-6 transition-transform duration-300 hover:scale-105`}
       >
         <div
-          className={`card-body flex flex-col lg:flex-row ${isEven ? "lg:flex-row-reverse" : ""} items-center justify-between`}
+          className={`card-body flex flex-col lg:flex-row ${isEven ? "lg:flex-row" : ""} items-center justify-between`}
         >
           
           {item.id === 1 && (

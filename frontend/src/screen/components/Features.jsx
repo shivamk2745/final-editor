@@ -5,7 +5,7 @@ import features from "../store/features.json";
 function Features() {
   return (
     <>
-      <div className="p-10 bg-gradient-to-b from-[#041c31] to-[#0b0b0b] ">
+      <div className="p-10 bg-gradient-to-b from-[#041c31] to-[#0b0b0b] flex lg:flex-row md:flex-col">
         {features.map((item) => (
           <FeatureCard key={item.id} item={item} />
         ))}

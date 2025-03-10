@@ -17,7 +17,7 @@ function Banner() {
             <div className="relative inline-block">
               <div className="absolute bg-violet-700 blur-xl rounded-sm h-12 w-28 bottom-0"></div>
               {authUser ? (
-                <Link to="/" className="relative px-6 py-4 font-medium rounded-lg bg-transparent bg-clip-border bg-gradient-to-r from-cyan-300 to-violet-500 hover:text-white transition-colors duration-300 text-black text-2xl">
+                <Link to="/editorpage" className="relative px-6 py-4 font-medium rounded-lg bg-transparent bg-clip-border bg-gradient-to-r from-cyan-300 to-violet-500 hover:text-white transition-colors duration-300 text-black text-2xl">
                 Get Started
               </Link>
               ) : (

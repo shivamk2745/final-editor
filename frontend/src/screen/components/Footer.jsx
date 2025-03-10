@@ -34,7 +34,7 @@ function Footer() {
               <input
                 type="text"
                 placeholder="username@site.com"
-                className="input input-bordered join-item text-xl w-full bg-neutral-800 border-neutral-700 text-white"
+                className="input input-bordered join-item text-xl w-full p-3 bg-neutral-800 border-neutral-700 text-white"
               />
               <button className="btn join-item bg-gradient-to-r from-cyan-300 to-violet-500 border-none text-neutral-900 hover:text-white transition-colors duration-300 text-2xl">Subscribe</button>
             </div>
