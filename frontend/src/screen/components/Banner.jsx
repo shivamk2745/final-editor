@@ -2,7 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import dotted from "../assets/dotted.png";
 import HomeCode from "../assets/homeCode.png";
+import { useAuth } from "../../Provider/AuthProvider";
 function Banner() {
+  const [authUser, setAuthUser] = useAuth();
   return (
     <>
       <div className="hero bg-gradient-to-b from-[#1d1d1d] via-[#1d1d1d] to-[#041c31] min-h-screen flex flex-col md:flex-row">
@@ -14,9 +16,17 @@ function Banner() {
             </p>
             <div className="relative inline-block">
               <div className="absolute bg-violet-700 blur-xl rounded-sm h-12 w-28 bottom-0"></div>
-              <Link to="/editorpage" className="relative px-6 py-4 font-medium rounded-lg bg-transparent bg-clip-border bg-gradient-to-r from-cyan-300 to-violet-500 hover:text-white transition-colors duration-300 text-black text-2xl">
+              {authUser ? (
+                <Link to="/" className="relative px-6 py-4 font-medium rounded-lg bg-transparent bg-clip-border bg-gradient-to-r from-cyan-300 to-violet-500 hover:text-white transition-colors duration-300 text-black text-2xl">
                 Get Started
               </Link>
+              ) : (
+                <Link to="/signup" className="relative px-6 py-4 font-medium rounded-lg bg-transparent bg-clip-border bg-gradient-to-r from-cyan-300 to-violet-500 hover:text-white transition-colors duration-300 text-black text-2xl">
+                Join Us
+              </Link>
+              )
+              }
+              
             </div>
           </div>
         </div>
