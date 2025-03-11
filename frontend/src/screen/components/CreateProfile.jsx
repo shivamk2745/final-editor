@@ -3,10 +3,12 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../Provider/AuthProvider";
 
 function CreateProfile() {
   const navigate = useNavigate();
-  
+  const [authUser, setAuthUser] = useAuth();
+
   const {
     register,
     handleSubmit,
@@ -89,6 +91,7 @@ function CreateProfile() {
                 type="email"
                 placeholder="email"
                 className="input input-bordered text-xl p-3"
+                value={authUser.email}
                 name="email"
                 {...register("email", { required: true })}
               />
