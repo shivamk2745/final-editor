@@ -43,7 +43,7 @@ function SignUp() {
 
   return (
     <div className="hero bg-gradient-to-b from-[#1d1d1d] via-[#1d1d1d] to-[#041c31] flex flex-col min-h-screen justify-center items-center md:flex-row-reverse">
-      <div className="hero-content flex md:flex-col lg:flex-row-reverse lg:justify-betweenb lg:gap-64">
+      <div className="hero-content flex md:flex-col lg:flex-row-reverse lg:gap-64">
         <div className="text-center">
           <h1 className="text-4xl sm:text-5xl font-bold text-white p-2">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-violet-500">
@@ -63,7 +63,7 @@ function SignUp() {
         <div className="card bg-base-100 shrink-0 shadow-2xl w-full mp-4">
           <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
             <div className="form-control">
-              <h2 className="text-2xl font-bold mb-4 text-violet-600">SignUp</h2>
+              <h2 className="text-2xl font-bold mb-4 text-violet-600">Signup</h2>
               <label className="label">
                 <span className="label-text text-2xl">Name</span>
               </label>
@@ -104,7 +104,7 @@ function SignUp() {
             </div>
             <div className="card-actions flex justify-between mt-6">
               <button className="btn bg-transparent bg-clip-border bg-gradient-to-r from-cyan-300 to-violet-500 text-2xl hover:text-white">
-                SignUp
+                Signup
               </button>
               <span className="mt-4 text-xl">
                 Already registered?

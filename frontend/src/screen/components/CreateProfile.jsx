@@ -48,8 +48,8 @@ function CreateProfile() {
 
   return (
     <div className="hero bg-gradient-to-b from-[#1d1d1d] via-[#1d1d1d] to-[#041c31] flex flex-col min-h-screen justify-center items-center md:flex-row-reverse">
-      <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="text-center mx-4">
+      <div className="hero-content flex md:flex-col lg:flex-row-reverse lg:gap-64">
+      <div className="text-center mx-4">
           <h1 className="text-4xl sm:text-5xl font-bold text-white">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-violet-500">
               Welcome!
@@ -64,16 +64,16 @@ function CreateProfile() {
         <div className="card bg-base-100 shrink-0 shadow-2xl w-full max-w-screen-md p-4">
           <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
             <div className="form-control">
-              <h2 className="text-2xl font-bold mb-4 text-violet-600">
+              <h2 className="text-3xl font-bold mb-4 text-violet-600">
                 Profile
               </h2>
               <label className="label">
-                <span className="label-text">Name</span>
+                <span className="label-text text-2xl">Name</span>
               </label>
               <input
                 type="text"
                 placeholder="name"
-                className="input input-bordered"
+                className="input input-bordered text-xl p-3"
                 name="name"
                 {...register("name", { required: true })}
               />
@@ -83,12 +83,12 @@ function CreateProfile() {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Email</span>
+                <span className="label-text text-2xl">Email</span>
               </label>
               <input
                 type="email"
                 placeholder="email"
-                className="input input-bordered"
+                className="input input-bordered text-xl p-3"
                 name="email"
                 {...register("email", { required: true })}
               />
@@ -98,12 +98,12 @@ function CreateProfile() {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Pronoun</span>
+                <span className="label-text text-2xl">Pronoun</span>
               </label>
               <select 
               type="text"
               name="pronoun" 
-              className="input input-bordered" 
+              className="input input-bordered text-xl p-3" 
               {...register("pronoun", { required: true })}>
                 <option value="He/Him">He/Him</option>
                 <option value="She/Her">She/Her</option>
@@ -115,12 +115,12 @@ function CreateProfile() {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">College</span>
+                <span className="label-text text-2xl">College</span>
               </label>
               <input
                 type="text"
                 placeholder="college name"
-                className="input input-bordered"
+                className="input input-bordered text-xl p-3"
                 name="college"
                 {...register("college", { required: true })}
               />
@@ -130,12 +130,12 @@ function CreateProfile() {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Linkedln</span>
+                <span className="label-text text-2xl">Linkedln</span>
               </label>
               <input
                 type="text"
                 placeholder="url"
-                className="input input-bordered"
+                className="input input-bordered text-xl p-3"
                 name="linkdin"
                 {...register("linkdin", { required: true })}
               />
@@ -145,12 +145,12 @@ function CreateProfile() {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Github</span>
+                <span className="label-text text-2xl">Github</span>
               </label>
               <input
                 type="text"
                 placeholder="url"
-                className="input input-bordered"
+                className="input input-bordered text-xl p-3"
                 name="github"
                 {...register("github", { required: true })}
               />
@@ -160,12 +160,12 @@ function CreateProfile() {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Skills</span>
+                <span className="label-text text-2xl">Skills</span>
               </label>
               <input
                 type="text"
                 placeholder="leave space between skills"
-                className="input input-bordered"
+                className="input input-bordered text-xl p-3"
                 name="skills"
                 {...register("skills", { required: true })}
               />
@@ -175,12 +175,12 @@ function CreateProfile() {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Languages</span>
+                <span className="label-text text-2xl">Languages</span>
               </label>
               <input
                 type="text"
                 placeholder="leave space between skills"
-                className="input input-bordered"
+                className="input input-bordered text-xl p-3"
                 name="languages"
                 {...register("languages", { required: true })}
               />
@@ -190,12 +190,12 @@ function CreateProfile() {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">About You</span>
+                <span className="label-text text-2xl">About You</span>
               </label>
               <textarea
                 type="text"
                 placeholder="Bio"
-                className="input input-bordered"
+                className="input input-bordered text-xl p-3"
                 name="bio"
                 {...register("bio", { required: true })}
               />
@@ -204,7 +204,7 @@ function CreateProfile() {
               )}
             </div>
             <div className="card-actions flex justify-between mt-6">
-              <button className="btn bg-transparent bg-clip-border bg-gradient-to-r from-cyan-300 to-violet-500 hover:text-white">
+              <button className="btn bg-transparent bg-clip-border bg-gradient-to-r from-cyan-300 to-violet-500 text-2xl hover:text-white">
                 Submit
               </button>
             </div>
