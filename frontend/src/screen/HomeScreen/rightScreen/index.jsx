@@ -35,19 +35,19 @@ const QuestionCard = ({ question }) => {
       onClick={handleClick}
     >
       <div className="flex justify-between items-start mb-3">
-        <h3 className="text-lg font-semibold text-white truncate pr-2">{question.fileName}</h3>
+        <h3 className="text-3xl font-semibold text-white truncate pr-2">{question.fileName}</h3>
         {question.difficulty && (
-          <span className={`text-xs px-2 py-1 rounded-full font-medium ${difficultyColors[question.difficulty]}`}>
+          <span className={`text-xl px-2 py-1 rounded-full font-medium ${difficultyColors[question.difficulty]}`}>
             {question.difficulty}
           </span>
         )}
       </div>
-      <p className="text-gray-400 text-sm mb-4 line-clamp-2">
+      <p className="text-gray-400 text-xl mb-4 line-clamp-2">
         {question.descriptions?.substring(0, 100)}...
       </p>
       <div className="flex flex-wrap gap-2">
         {question.company?.slice(0, 3).map((company, index) => (
-          <span key={index} className="text-xs px-2 py-1 bg-neutral-700 text-neutral-300 rounded-full">
+          <span key={index} className="text-xl px-2 py-1 bg-neutral-700 text-neutral-300 rounded-full">
             {company}
           </span>
         ))}
@@ -77,7 +77,7 @@ const TopicSection = ({ title, questions }) => {
       >
         <div className="flex items-center">
           <span className="material-icons text-yellow-400 mr-3">folder</span>
-          <span className="text-xl font-semibold text-white">{title} ({questions.length})</span>
+          <span className="text-3xl font-semibold text-white">{title} ({questions.length})</span>
         </div>
         <span className="material-icons text-gray-400">
           {isExpanded ? "expand_less" : "expand_more"}
@@ -218,7 +218,7 @@ const RightScreen = () => {
       {/* Tabs for switching between Practice and Playground */}
       <div className="flex border-b border-neutral-700 mb-6">
         <button 
-          className={`py-3 px-5 font-medium text-lg ${
+          className={`py-3 px-5 font-medium text-4xl ${
             activeTab === "practice" 
               ? "text-cyan-400 border-b-2 border-cyan-400" 
               : "text-gray-400 hover:text-gray-300"
@@ -228,7 +228,7 @@ const RightScreen = () => {
           Practice Problems
         </button>
         <button 
-          className={`py-3 px-5 font-medium text-lg ${
+          className={`py-3 px-5 font-medium text-4xl ${
             activeTab === "playground" 
               ? "text-cyan-400 border-b-2 border-cyan-400" 
               : "text-gray-400 hover:text-gray-300"
@@ -242,14 +242,14 @@ const RightScreen = () => {
       {activeTab === "practice" ? (
         <div className="practice-section">
           <div className="right-header mb-6">
-            <div className="title text-2xl">
+            <div className="title text-xl">
               <span style={{ fontWeight: "400" }}>Practice</span>{" "}
               <span style={{ fontWeight: "700" }}>Problems</span>
             </div>
             <div className="flex gap-3">
               <button className="button-header">
                 <span className="material-icons">filter_list</span>
-                <span>Filter</span>
+                <span >Filter</span>
               </button>
               <button className="button-header">
                 <span className="material-icons">search</span>

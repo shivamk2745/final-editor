@@ -15,7 +15,9 @@ const EditorPage = ({
   setOutput,
   editorCode,
   setEditorCode,
-  isPracticeQuestion
+  isPracticeQuestion,
+  language: parentLanguage, // Accept language from parent
+  setLanguage: setParentLanguage // Accept language setter from parent
 }) => {
   const { getDefaultCode, getLanguage, updateLanguage, saveNewCode } =
     useContext(PlaygroundContext);
@@ -29,8 +31,16 @@ const EditorPage = ({
   });
   
   const [language, setLanguage] = useState(() => {
-    return getLanguage(fileId, folderId) || "javascript";
+    // Use parent language if provided, otherwise get from context
+    return parentLanguage || getLanguage(fileId, folderId) || "javascript";
   });
+  
+  // Update local language when parent language changes
+  useEffect(() => {
+    if (parentLanguage && parentLanguage !== language) {
+      setLanguage(parentLanguage);
+    }
+  }, [parentLanguage]);
   
   const [theme, setTheme] = useState("vs-dark");
   const codeRef = useRef(code);
@@ -115,6 +125,11 @@ const EditorPage = ({
   const handleLanguage = (e) => {
     const newLanguage = e.target.value;
     setLanguage(newLanguage);
+    
+    // Update the parent's language state if provided
+    if (setParentLanguage) {
+      setParentLanguage(newLanguage);
+    }
     
     if (!isPracticeQuestion) {
       updateLanguage(fileId, folderId, newLanguage);

@@ -15,6 +15,7 @@ const Playground = () => {
   const [output, setOutput] = useState("");
   const [editorCode, setEditorCode] = useState("");
   const [questionData, setQuestionData] = useState(null);
+  const [language, setLanguage] = useState("javascript"); // Default language
   const param = useParams();
   const { fileId, folderId, fileName } = param;
   const location = useLocation();
@@ -24,6 +25,68 @@ const Playground = () => {
   
   // Determine if this is a practice question
   const isPracticeQuestion = folderId === "practice";
+  
+  // Function to get language-specific template for a question
+  const getCodeTemplate = (question, lang) => {
+    if (!question) return "";
+    
+    const examples = question.examples && question.examples.length > 0 
+      ? question.examples.map((ex, idx) => 
+          `Example ${idx + 1}:\nInput: ${ex.input}\nOutput: ${ex.output}${ex.explanation ? `\nExplanation: ${ex.explanation}` : ""}`
+        ).join("\n\n")
+      : "No examples provided";
+    
+    const templates = {
+      javascript: `function solution(input) {
+  // Your code here
+  
+  return result;
+}`,
+
+      python: `def solution(input):
+    # Your code here
+    
+    return result
+
+# Test your solution
+print(solution(input))`,
+
+      
+      cpp: `#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+// Write your solution here
+
+int main() {
+    // Your code here
+    
+    return 0;
+}`,
+
+      java: `import java.util.*;
+
+public class Solution {
+    // Write your solution here
+    public static void main(String[] args) {
+        // Test your solution
+    }
+}`
+    };
+    
+    return templates[lang] || templates.javascript;
+  };
+  
+  // Handler for language change
+  const handleLanguageChange = (newLanguage) => {
+    setLanguage(newLanguage);
+    
+    // Update the editor code with the new language template if we have question data
+    if (questionData) {
+      setEditorCode(getCodeTemplate(questionData, newLanguage));
+    }
+  };
   
   useEffect(() => {
     // If this is a practice question, fetch the question data
@@ -35,14 +98,13 @@ const Playground = () => {
       if (question) {
         setQuestionData(question);
         
-        // Set default code template based on question
-        const defaultTemplate = `// ${question.fileName}\n// ${question.difficulty} - ${question.topic}\n\n// ${question.descriptions}\n\n// Time Complexity: ${question.time || 'Unknown'}\n// Space Complexity: ${question.space || 'Unknown'}\n\n// Start your solution here\n`;
-        setEditorCode(defaultTemplate);
+        // Set language-specific code template based on question
+        setEditorCode(getCodeTemplate(question, language));
       } else {
         console.error("Question not found for ID:", fileId);
       }
     }
-  }, [fileId, folderId, fileName, isPracticeQuestion]);
+  }, [fileId, folderId, fileName, isPracticeQuestion, language]);
 
   const callback = ({ apiStatus, data, message }) => {
     console.log(data);
@@ -73,7 +135,7 @@ const Playground = () => {
       <div className="outer-container">
         <div className="playground-container">
           <div className="container-header">
-            <img src={ logo} alt="logo" />
+            <img src={logo} alt="logo" />
             {isPracticeQuestion && questionData ? (
               <div className="flex items-center">
                 <b className="mr-2">Problem: {questionData.fileName}</b>
@@ -104,6 +166,8 @@ const Playground = () => {
                 editorCode={editorCode}
                 setEditorCode={setEditorCode}
                 isPracticeQuestion={isPracticeQuestion}
+                language={language}
+                setLanguage={handleLanguageChange}
               />
             </div>
             {magic ? (
