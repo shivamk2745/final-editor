@@ -2,8 +2,10 @@ import { useEffect, useState, useRef } from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { io } from "socket.io-client";
 import Editor from "@monaco-editor/react";
-import problemsData from "../PlayGroundScreen/data.json"; // Import the problems data
+import problemsData from "../PlayGroundScreen/data.json";
+import VideoCall from "../Video/VideoCall";
 import "./interviewPage.scss";
+
 const InterviewPage = () => {
   const { roomId } = useParams();
   const location = useLocation();
@@ -40,6 +42,9 @@ const InterviewPage = () => {
   
   const codeRef = useRef(code);
   const chatEndRef = useRef(null);
+
+  // New state for video call
+  const [showVideoCall, setShowVideoCall] = useState(false);
 
   // Socket connection setup remains the same
   useEffect(() => {
@@ -228,6 +233,11 @@ const InterviewPage = () => {
     alert("Room ID copied to clipboard!");
   };
 
+  // Add a button to toggle video call visibility
+  const toggleVideoCall = () => {
+    setShowVideoCall(!showVideoCall);
+  };
+
   // Editor options
   const editorOptions = {
     fontSize: "16px",
@@ -260,9 +270,9 @@ const InterviewPage = () => {
           </div>
         </div>
         
-        <div className="center-section flex-1 flex justify-center">
+        <div className="center-section flex-1 flex justify-center items-center">
           {currentProblem && (
-            <div className="current-problem text-center">
+            <div className="current-problem text-center mr-4">
               <span className="font-semibold text-2xl text-black">Current Problem:</span> <span className="px-2 text-2xl text-gray-500">{currentProblem.title}</span>
               <span className={`ml-2 px-2 py-0.5 text-lg rounded-full ${
                 currentProblem.difficulty === 'Easy' ? 'bg-green-100 text-green-800' :
@@ -273,6 +283,16 @@ const InterviewPage = () => {
               </span>
             </div>
           )}
+          
+          <button 
+            onClick={toggleVideoCall}
+            className={`video-call-btn px-4 py-2 rounded-md text-white font-medium flex items-center ${
+              showVideoCall ? 'bg-red-500 hover:bg-red-600' : 'bg-gradient-to-r from-cyan-500 to-violet-500 hover:opacity-90'
+            }`}
+          >
+            <span className="mr-2">{showVideoCall ? 'End Call' : 'Start Video Call'}</span>
+            <span className="text-xl">{showVideoCall ? '📵' : '📹'}</span>
+          </button>
         </div>
         
         <div className="right-section flex items-center space-x-4">
@@ -531,6 +551,17 @@ const InterviewPage = () => {
           </div>
         </div>
       </div>
+      
+      {/* Video call component */}
+      {showVideoCall && (
+        <VideoCall 
+          socket={socketRef.current} 
+          roomId={roomId} 
+          userName={userName}
+          participants={participants}
+        />
+        
+      )}
     </div>
   );
 };

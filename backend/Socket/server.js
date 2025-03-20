@@ -21,7 +21,7 @@ const PORT = process.env.PORT || 5000;
 const rooms = {};
 
 io.on("connection", (socket) => {
-  console.log("New client connected");
+  console.log("New client connected", socket.id);
 
   socket.on("join-room", ({ roomId, userName, isHost }) => {
     socket.join(roomId);
@@ -32,6 +32,7 @@ io.on("connection", (socket) => {
         language: "javascript",
         input: "",
         currentProblem: null,
+        videoParticipants: [],
       };
     }
     rooms[roomId].participants.push({ id: socket.id, name: userName, isHost });
@@ -43,7 +44,9 @@ io.on("connection", (socket) => {
     socket.emit("code-change", rooms[roomId].code);
     socket.emit("language-change", rooms[roomId].language);
     socket.emit("input-change", rooms[roomId].input);
-    socket.emit("problem-selected", rooms[roomId].currentProblem);
+    if (rooms[roomId].currentProblem) {
+      socket.emit("problem-selected", rooms[roomId].currentProblem);
+    }
   });
 
   socket.on("code-change", ({ roomId, code }) => {
@@ -106,20 +109,80 @@ io.on("connection", (socket) => {
       });
   });
 
+  // Video Call Events
+  socket.on("video-ready", ({ roomId, userName, peerId }) => {
+    if (rooms[roomId]) {
+      // Add user to video participants with their peer ID
+      rooms[roomId].videoParticipants.push({
+        id: socket.id,
+        name: userName,
+        peerId: peerId,
+      });
+
+      // Notify other users in room that a new user is ready for video
+      socket.to(roomId).emit("user-joined-video", {
+        userId: socket.id,
+        userName,
+        peerId,
+      });
+    }
+  });
+
+  socket.on(
+    "call-user",
+    ({ userToSignal, callerId, signal, roomId, callerName }) => {
+      io.to(userToSignal).emit("receiving-call", {
+        signal,
+        callerId,
+        callerName,
+      });
+    }
+  );
+
+  socket.on("accept-call", ({ signal, to, roomId }) => {
+    io.to(to).emit("call-accepted", {
+      signal,
+      from: socket.id,
+    });
+  });
+
   socket.on("disconnect", () => {
-    console.log("Client disconnected");
+    console.log("Client disconnected", socket.id);
 
-    for (let roomId in rooms) {
+    // Find which rooms this user was in
+    Object.keys(rooms).forEach((roomId) => {
       const room = rooms[roomId];
-      room.participants = room.participants.filter((p) => p.id !== socket.id);
-      io.to(roomId).emit("room-users", room.participants);
 
+      // Remove from participants
+      const participantIndex = room.participants.findIndex(
+        (p) => p.id === socket.id
+      );
+      if (participantIndex !== -1) {
+        room.participants.splice(participantIndex, 1);
+        io.to(roomId).emit("room-users", room.participants);
+      }
+
+      // Find user in video participants to get their peerId
+      const videoParticipant = room.videoParticipants?.find(
+        (p) => p.id === socket.id
+      );
+      const peerId = videoParticipant?.peerId;
+
+      // Remove from video participants
+      const videoParticipantIndex = room.videoParticipants?.findIndex(
+        (p) => p.id === socket.id
+      );
+      if (videoParticipantIndex !== -1) {
+        room.videoParticipants.splice(videoParticipantIndex, 1);
+        io.to(roomId).emit("user-left-video", { userId: socket.id, peerId });
+      }
+
+      // Clean up empty rooms
       if (room.participants.length === 0) {
         delete rooms[roomId];
       }
-    }
+    });
   });
 });
 
-// server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-module.exports = { server, io, app };
+module.exports = { app, server, io };

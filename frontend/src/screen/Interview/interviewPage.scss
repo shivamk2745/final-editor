@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  position: relative;
+  overflow: visible;
   
   .interview-header {
     z-index: 10;
@@ -102,4 +104,20 @@
 // Ensure the editor expands to fill available space
 :global(.monaco-editor) {
   width: 100% !important;
+}
+
+// Append to the existing styles
+
+// Video call button
+.video-call-btn {
+  transition: all 0.3s;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
 }
