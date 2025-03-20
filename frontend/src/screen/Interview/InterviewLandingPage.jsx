@@ -57,7 +57,7 @@ const InterviewLandingPage = () => {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-cyan-300 to-violet-500 p-4">
       <div className="bg-white rounded-lg shadow-xl p-8 w-full max-w-md">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-violet-600">
+          <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-violet-600">
             {isCreating ? 'Create Interview' : 'Join Interview'}
           </h1>
           <p className="text-gray-600 mt-2">

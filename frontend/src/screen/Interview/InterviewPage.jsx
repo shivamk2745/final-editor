@@ -243,11 +243,11 @@ const InterviewPage = () => {
       {/* Header remains the same */}
       <div className="interview-header bg-white shadow-md p-4 rounded-t-lg flex justify-between items-center">
         <div className="left-section flex items-center">
-          <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-violet-600 mr-4">
+          <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-violet-600 mr-4">
             Code Interview
           </h1>
           <div className="room-info flex items-center">
-            <span className="bg-gray-100 px-3 py-1 rounded-md text-sm text-gray-700 mr-2">
+            <span className="bg-gray-100 px-3 py-1 rounded-md text-xl text-gray-700 mr-2">
               Room: {roomId}
             </span>
             <button 
@@ -263,11 +263,11 @@ const InterviewPage = () => {
         <div className="center-section flex-1 flex justify-center">
           {currentProblem && (
             <div className="current-problem text-center">
-              <span className="font-semibold">Current Problem:</span> {currentProblem.title}
-              <span className={`ml-2 px-2 py-0.5 text-xs rounded-full ${
+              <span className="font-semibold text-2xl text-black">Current Problem:</span> <span className="px-2 text-2xl text-gray-500">{currentProblem.title}</span>
+              <span className={`ml-2 px-2 py-0.5 text-lg rounded-full ${
                 currentProblem.difficulty === 'Easy' ? 'bg-green-100 text-green-800' :
                 currentProblem.difficulty === 'Medium' ? 'bg-yellow-100 text-yellow-800' :
-                'bg-red-100 text-red-800'
+                'bg-red-100 text-red-800 text-xl'
               }`}>
                 {currentProblem.difficulty}
               </span>
@@ -277,10 +277,10 @@ const InterviewPage = () => {
         
         <div className="right-section flex items-center space-x-4">
           <div className="participants flex items-center">
-            <span className="text-sm text-gray-600 mr-2">Participants ({participants.length}):</span>
+            <span className="text-2xl text-gray-600 mr-2">Participants ({participants.length}):</span>
             <div className="avatar-group flex -space-x-2">
               {participants.map((user, index) => (
-                <div key={index} className="w-8 h-8 rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 flex items-center justify-center text-white text-xs font-bold" title={user.name}>
+                <div key={index} className="w-8 h-8 rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 flex items-center justify-center text-white text-xl font-bold" title={user.name}>
                   {user.name.charAt(0).toUpperCase()}
                 </div>
               ))}
@@ -289,7 +289,7 @@ const InterviewPage = () => {
           
           <button 
             onClick={handleLeaveRoom} 
-            className="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 transition-colors"
+            className="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 transition-colors text-xl"
           >
             Leave Room
           </button>
@@ -300,7 +300,7 @@ const InterviewPage = () => {
         <div className="left-panel w-1/4 bg-white rounded-bl-lg p-4 flex flex-col overflow-hidden">
           {isHost ? (
             <div className="problems-list flex-1 overflow-y-auto">
-              <h2 className="text-xl font-semibold mb-4">Select a Problem</h2>
+              <h2 className="text-3xl font-semibold mb-4 text-black">Select a Problem</h2>
               {problemsList.map(problem => (
                 <div 
                   key={problem.id} 
@@ -312,8 +312,8 @@ const InterviewPage = () => {
                   onClick={() => handleSelectProblem(problem)}
                 >
                   <div className="flex justify-between items-center">
-                    <h3 className="font-medium">{problem.title}</h3>
-                    <span className={`px-2 py-0.5 text-xs rounded-full ${
+                    <h3 className="font-medium text-xl text-black">{problem.title}</h3>
+                    <span className={`px-2 py-0.5 text-xl rounded-full ${
                       problem.difficulty === 'Easy' ? 'bg-green-100 text-green-800' :
                       problem.difficulty === 'Medium' ? 'bg-yellow-100 text-yellow-800' :
                       'bg-red-100 text-red-800'
@@ -321,7 +321,7 @@ const InterviewPage = () => {
                       {problem.difficulty}
                     </span>
                   </div>
-                  <p className="text-sm text-gray-600 mt-1 line-clamp-2">{problem.description}</p>
+                  <p className="text-xl text-gray-600 mt-1 line-clamp-2">{problem.description}</p>
                 </div>
               ))}
             </div>
@@ -329,24 +329,24 @@ const InterviewPage = () => {
             <div className="problem-details flex-1 overflow-y-auto">
               {currentProblem ? (
                 <>
-                  <h2 className="text-xl font-semibold mb-2">{currentProblem.title}</h2>
-                  <span className={`inline-block mb-4 px-2 py-0.5 text-xs rounded-full ${
+                  <h2 className="text-3xl font-bold mb-2">{currentProblem.title}</h2>
+                  <span className={`inline-block mb-4 px-2 py-0.5 text-lg rounded-full ${
                     currentProblem.difficulty === 'Easy' ? 'bg-green-100 text-green-800' :
                     currentProblem.difficulty === 'Medium' ? 'bg-yellow-100 text-yellow-800' :
                     'bg-red-100 text-red-800'
                   }`}>
                     {currentProblem.difficulty}
                   </span>
-                  <div className="description bg-gray-50 p-4 rounded-lg mb-4">
+                  <div className="description text-gray-500 p-4 rounded-lg mb-4 text-2xl font-semibold">
                     <p>{currentProblem.description}</p>
                   </div>
                   
                   {/* Display examples from the problem data */}
                   {currentProblem.examples && currentProblem.examples.length > 0 && (
-                    <div className="examples">
-                      <h3 className="font-medium mb-2">Examples:</h3>
+                    <div className="examples text-gray-500">
+                      <h3 className="font-medium mb-2 text-2xl">Examples:</h3>
                       {currentProblem.examples.map((example, index) => (
-                        <div key={index} className="example bg-gray-50 p-3 rounded-lg mb-2">
+                        <div key={index} className="example bg-gray-50 p-3 rounded-lg mb-2 text-lg">
                           <div><strong>Example {index + 1}:</strong></div>
                           <div><strong>Input:</strong> {example.input}</div>
                           <div><strong>Output:</strong> {example.output}</div>
@@ -358,7 +358,7 @@ const InterviewPage = () => {
                   
                   {/* Display constraints if available */}
                   {currentProblem.constraints && (
-                    <div className="constraints mt-4">
+                    <div className="constraints mt-4 text-lg text-gray-500">
                       <h3 className="font-medium mb-2">Constraints:</h3>
                       <div className="bg-gray-50 p-3 rounded-lg">
                         {currentProblem.constraints}
@@ -376,14 +376,14 @@ const InterviewPage = () => {
 
           {/* Chat container remains the same */}
           <div className="chat-container mt-4 h-1/2 flex flex-col border rounded-lg">
-            <div className="chat-header bg-gray-50 p-2 border-b rounded-t-lg">
-              <h3 className="font-medium">Interview Chat</h3>
+            <div className="chat-header bg-gray-200 p-2 border-b rounded-t-lg">
+              <h3 className="font-medium text-xl text-black">Interview Chat</h3>
             </div>
             <div className="chat-messages flex-1 p-2 overflow-y-auto">
               {chatMessages.length > 0 ? (
                 chatMessages.map((msg, index) => (
                   <div key={index} className={`chat-message mb-2 ${msg.sender === userName ? 'text-right' : ''}`}>
-                    <span className="font-semibold text-xs text-gray-600">{msg.sender}:</span>
+                    <span className="font-semibold text-xl text-gray-600">{msg.sender}:</span>
                     <div className={`inline-block max-w-xs px-3 py-2 rounded-lg ${
                       msg.sender === userName 
                         ? 'bg-gradient-to-r from-cyan-500 to-violet-500 text-white' 
@@ -394,8 +394,8 @@ const InterviewPage = () => {
                   </div>
                 ))
               ) : (
-                <div className="text-center text-gray-500 my-4">
-                  <p>No messages yet</p>
+                <div className="text-center text-gray-500 my-4 ">
+                  <p className="text-xl">No messages yet</p>
                 </div>
               )}
               <div ref={chatEndRef}></div>
@@ -406,11 +406,11 @@ const InterviewPage = () => {
                 value={newMessage}
                 onChange={(e) => setNewMessage(e.target.value)}
                 placeholder="Type a message..."
-                className="flex-1 border rounded-l-md px-2 py-1 focus:outline-none focus:ring-1 focus:ring-cyan-500"
+                className="flex-1 border rounded-l-md px-2 py-1 focus:outline-none focus:ring-1 focus:ring-cyan-500 text-xl"
               />
               <button 
                 type="submit" 
-                className="bg-gradient-to-r from-cyan-500 to-violet-500 text-white px-3 py-1 rounded-r-md"
+                className="bg-gradient-to-r from-cyan-500 to-violet-500 text-white px-3 py-1 rounded-r-md text-xl"
               >
                 Send
               </button>
@@ -449,12 +449,12 @@ const InterviewPage = () => {
             
             <div className="connection-status">
               {isConnected ? (
-                <span className="text-green-500 flex items-center">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-1"></span>
+                <span className="text-green-500 flex items-center  text-2xl">
+                  <span className="w-2 h-2 bg-green-500 rounded-full mr-1 "></span>
                   Connected
                 </span>
               ) : (
-                <span className="text-red-500 flex items-center">
+                <span className="text-red-500 flex items-center text-2xl">
                   <span className="w-2 h-2 bg-red-500 rounded-full mr-1"></span>
                   Disconnected
                 </span>
@@ -476,29 +476,29 @@ const InterviewPage = () => {
           <div className="io-container flex">
             <div className="input-container w-1/2 p-4 border-t border-r">
               <div className="input-header mb-2 flex justify-between items-center">
-                <h3 className="font-medium">Input</h3>
+                <h3 className="font-medium text-2xl">Input</h3>
               </div>
               <textarea
                 value={input}
                 onChange={handleInputChange}
                 placeholder="Enter your test input here..."
-                className="w-full h-24 border rounded p-2 resize-none focus:outline-none focus:ring-1 focus:ring-cyan-500"
+                className="w-full h-40 border rounded p-2 resize-none focus:outline-none focus:ring-1 focus:ring-cyan-500"
               ></textarea>
             </div>
             
             <div className="output-container w-1/2 p-4 border-t">
               <div className="output-header mb-2 flex justify-between items-center">
-                <h3 className="font-medium">Output</h3>
+                <h3 className="font-medium text-2xl">Output</h3>
               </div>
               <div 
-                className="w-full h-24 border rounded p-2 bg-gray-50 overflow-auto"
+                className="w-full h-40 border rounded p-2 bg-black overflow-auto"
               >
                 {isRunning ? (
                   <div className="flex items-center justify-center h-full">
-                    <div className="animate-pulse text-gray-500">Running code...</div>
+                    <div className="animate-pulse text-white">Running code...</div>
                   </div>
                 ) : (
-                  <pre className="text-sm whitespace-pre-wrap">{output}</pre>
+                  <pre className=" whitespace-pre-wrap text-xl text-white">{output}</pre>
                 )}
               </div>
             </div>
@@ -518,13 +518,13 @@ const InterviewPage = () => {
             >
               {isRunning ? (
                 <>
-                  <span className="mr-2">Running</span>
-                  <span className="animate-spin">⟳</span>
+                  <span className="mr-2 text-2xl">Running</span>
+                  <span className="animate-spin text-2xl">⟳</span>
                 </>
               ) : (
                 <>
-                  <span className="mr-2">Run Code</span>
-                  <span>▶</span>
+                  <span className="mr-2 text-2xl">Run Code</span>
+                  <span className="text-2xl">▶</span>
                 </>
               )}
             </button>
