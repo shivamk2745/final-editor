@@ -113,15 +113,15 @@ const Card = ({ fileName, language, id, folderId }) => {
       <div className="card-data" onClick={handleId}>
         <img src="logo.png" alt="logo" />
         <div className="card-header">
-          <h4 className="text-size">{fileName}</h4>
-          <h4 className="text-size">Language : {language}</h4>
+          <h4 className="text-size text-white">{fileName}</h4>
+          <h4 className="text-size text-white">Language : {language}</h4>
         </div>
       </div>
       <div className="card-tool">
-        <span className="material-icons" onClick={handleCardDelete}>
+        <span className="material-icons text-white" onClick={handleCardDelete}>
           delete
         </span>
-        <span className="material-icons" onClick={handleCardEdit}>
+        <span className="material-icons text-white" onClick={handleCardEdit}>
           edit
         </span>
       </div>
@@ -151,20 +151,20 @@ const Folder = ({ folderTitle, cards, id }) => {
           <span className="material-icons" style={{ color: "rgb(255,202,40)" }}>
             folder
           </span>
-          <span style={{ fontSize: "1.7rem", fontWeight: "600" }}>
+          <span style={{ fontSize: "1.7rem", fontWeight: "600", color: "white" }}>
             {folderTitle}
           </span>
         </div>
         <div className="folder-tool">
-          <span className="material-icons" onClick={handleDelete}>
+          <span className="material-icons text-white" onClick={handleDelete}>
             delete
           </span>
-          <span className="material-icons" onClick={handleEdit}>
+          <span className="material-icons text-white" onClick={handleEdit}>
             edit
           </span>
-          <button className="button-header" onClick={handlePlayground}>
-            <span className="material-icons">add</span>
-            <span>New Playground</span>
+          <button onClick={handlePlayground}>
+            <span className="material-icons bg-[#1d1d1d] text-white">add</span>
+            <span className="text-white">New Playground</span>
           </button>
         </div>
       </div>
@@ -356,7 +356,7 @@ const RightScreen = () => {
           Practice Problems
         </button>
         <button 
-          className={`py-3 px-5 font-medium text-lg ${
+          className={`py-3 px-5 font-medium text-lg${
             activeTab === "playground" 
               ? "text-cyan-400 border-b-2 border-cyan-400" 
               : "text-gray-400 hover:text-gray-300"
@@ -476,19 +476,19 @@ const RightScreen = () => {
         <div className="playground-section">
           <div className="right-header">
             <div className="title">
-              <span style={{ fontWeight: "400" }}>My</span>{" "}
-              <span style={{ fontWeight: "700" }}>Playground</span>
+              <span className="text-white">My</span>{" "}
+              <span className="text-white">Playground</span>
             </div>
-            <button className="button-header" onClick={openFolder}>
+            <button onClick={openFolder}>
               <b>
                 <span
-                  className="material-icons"
+                  className="material-icons bg-[#1d1d1d] text-white"
                   style={{ fontWeight: "bold", fontSize: "1.2rem" }}
                 >
                   add
                 </span>
               </b>
-              <span>New Folder</span>
+              <span className="bg-[#1d1d1d] text-white">New Folder</span>
             </button>
           </div>
 
