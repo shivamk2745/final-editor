@@ -12,6 +12,24 @@ const InterviewPage = () => {
   const navigate = useNavigate();
   
   // Get data from route state or provide defaults
+  useEffect(() => {
+    if (!location.state?.name || location.state.name === "Anonymous") {
+      navigate('/signup', { 
+        replace: true,
+        state: { 
+          from: location.pathname,
+          message: "Please log in to join the interview session" 
+        } 
+      });
+      return;
+    }
+  }, [location.state, navigate, location.pathname]);
+
+  // Return null while checking authentication
+  if (!location.state?.name || location.state.name === "Anonymous") {
+    return null;
+  }
+
   const userName = location.state?.name || "Anonymous";
   const isHost = location.state?.isHost || false;
   

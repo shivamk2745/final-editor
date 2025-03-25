@@ -7,6 +7,7 @@ const InterviewLandingPage = () => {
   const [roomId, setRoomId] = useState('');
   const [isCreating, setIsCreating] = useState(false);
   const [error, setError] = useState('');
+  const [copiedId, setCopiedId] = useState('');
   const navigate = useNavigate();
 
   const handleJoinInterview = (e) => {
@@ -42,7 +43,17 @@ const InterviewLandingPage = () => {
     
     // Generate a unique roomId
     const newRoomId = uuidv4();
-    console.log('New Room ID:', newRoomId);
+    
+    // Copy to clipboard
+    navigator.clipboard.writeText(newRoomId)
+      .then(() => {
+        setCopiedId(newRoomId);
+        setTimeout(() => setCopiedId(''), 2000); // Reset after 2 seconds
+      })
+      .catch(err => {
+        console.error('Failed to copy: ', err);
+      });
+
     // Navigate to the interview page as a host
     navigate(`/interview/${newRoomId}`, { 
       state: { 
@@ -108,9 +119,14 @@ const InterviewLandingPage = () => {
                 <button
                   type="submit"
                   onClick={handleCreateInterview}
-                  className="flex-1 bg-gradient-to-r from-cyan-500 to-violet-500 text-white py-2 px-4 rounded-md hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
+                  className="flex-1 bg-gradient-to-r from-cyan-500 to-violet-500 text-white py-2 px-4 rounded-md hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 relative"
                 >
-                  Create & Copy ID
+                  {copiedId ? 'Copied!' : 'Create & Copy ID'}
+                  {copiedId && (
+                    <span className="absolute top-0 right-0 -mt-2 -mr-2 bg-green-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
+                      ✓
+                    </span>
+                  )}
                 </button>
                 <button
                   type="button"
